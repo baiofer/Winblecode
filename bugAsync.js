@@ -40,16 +40,31 @@ function obtenerUsuario(id) {
 }
 
 /*
-Y ahora, para obtener el usuario podemos usar el método then() de las promesas, que se ejecuta cuando la promesa se resuelve correctamente, y el método catch() que se ejecuta cuando la promesa se rechaza, o el método async/await. Lo resolveré con promesas.
+Y ahora, para obtener el usuario podemos usar el método then() de las promesas, que se ejecuta cuando la promesa se resuelve correctamente, y el método catch() que se ejecuta cuando la promesa se rechaza, o el método async/await. Lo resolveré de ambas formas.
 */
 
-const usuario1 = obtenerUsuario(1);
-usuario1
-    .then((usuario1) => console.log('Usuario1: ', usuario1))
-    .catch((error1) => console.log('Error1: ', error1));
+// Con then/catch
+console.log('Obteniendo usuario then 1...');
+obtenerUsuario(1)
+    .then((usuario1) => console.log(`Usuario then 1: `, usuario1))
+    .catch((error1) => console.log(`Error usuario then 1: `, error1));
+console.log('Obteniendo usuario then 2...');
+obtenerUsuario(2)
+    .then((usuario2) => console.log(`Usuario then 2: `, usuario2))
+    .catch((error2) => console.log(`Error usuario then 2: `, error2));
 
-const usuario2 = obtenerUsuario(2);
-usuario2
-    .then((usuario2) => console.log('Usuario2: ', usuario2))
-    .catch((error2) => console.log('Error2: ', error2));
 
+
+// Con async/await
+async function obtenerUsuarioAsync(id) {
+    try {
+        console.log(`Obteniendo usuario async ${id}...`);
+        const usuario = await obtenerUsuario(id);
+        console.log(`Usuario async ${id}: `, usuario);
+    } catch (error) {
+        console.log(`Error usuario async ${id}: `, error);
+    }
+}
+
+obtenerUsuarioAsync(1);
+obtenerUsuarioAsync(2);
