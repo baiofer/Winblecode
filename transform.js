@@ -60,3 +60,28 @@ const nombresProyectos = ['Proyecto 1', 'Proyecto 2', 'Proyecto 3', 'Proyecto 4'
 */
 
 // SOLUCION
+
+// Desarrolladores que tengan como habilidad “JavaScript”
+const developersWithCompetency = (competency) => datos.filter((developer) => {
+    return developer.habilidades.includes(competency);
+});
+
+console.log(developersWithCompetency('JavaScript'));
+
+
+// Listado de los proyectos en el que sus desarrolladores trabajan
+const projects = datos.map((developer) => {
+    return developer.proyectos;
+});
+
+const listOfProjects = (projects) => {
+    let list = [];
+    projects.forEach((project) => {
+        project.forEach((p) => {
+            list.push(p.nombre);
+        });
+    });
+    return list;
+}
+
+console.log(listOfProjects(projects));
