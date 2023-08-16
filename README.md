@@ -14,6 +14,9 @@ Para ejecutar cada ejercicio, dentro del fichero **index.html** hemos de cambiar
 cambiando **transform.js** por el archivo que queramos ejecutar.
 
 
+## Práctica opcional WINBLECODE
+
+Para simular el torneo, entramos en el directorio Winblecode y ejecutamos el archivo index.html de su interior.
 
 
 
